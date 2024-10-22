@@ -1,3 +1,10 @@
 <section>
     <h2>Explore Movies</h2>
+    <% randomNineMoviesArray.forEach((element)=>{%>
+        <ul style="padding-bottom: 20px;">
+            <h3><%= element.title%></h3>
+            <li><%= element.releaseYear%></li>
+            <li style="width: 80%;"><%= element.description%></li>
+        </ul>
+   <% })%>
 </section>

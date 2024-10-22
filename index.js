@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const { getTopRatedMovies, getMoviesByGenre, getMovieDetailsById, selectRandomMovieId } = require('./utils/movieUtils');
+const { getTopRatedMovies, getMoviesByGenre, getMovieDetailsById, selectRandomMovieId,getRandomNumberOfMovies } = require('./utils/movieUtils');
 const { Movies, Genres } = require('./utils/data');
 
 const app = express();
@@ -10,7 +10,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 
 app.get('/', (request, response) => {
-    response.render('index');
+    const randomNineMoviesArray = getRandomNumberOfMovies(9)
+    console.log(randomNineMoviesArray);
+    response.render('index', {randomNineMoviesArray});
 });
 
 app.get("/topRated", (request, response) => {
