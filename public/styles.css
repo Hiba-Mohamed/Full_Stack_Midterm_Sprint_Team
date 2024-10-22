@@ -1,7 +1,7 @@
 /* Base styling, feel free to remove or alter */
 
 body {
-    background: linear-gradient(90deg, rgba(93,142,251,1) 0%, rgba(93,142,251,1) 50%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgb(10, 26, 62) 0%, rgb(2, 7, 19) 50%, rgb(40, 12, 77) 100%);
     height: 100%;
     padding: 0px;
     margin: 0px;

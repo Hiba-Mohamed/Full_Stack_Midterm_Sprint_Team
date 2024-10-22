@@ -9,9 +9,9 @@
 </head>
     <body style="display: flex; flex-direction: column; padding:10px;">
     <%- include('header') %>
-    <h2>Top Rated <%=topRatedFifteen.length%></h2>
+    <h1>Top Rated <%=topRatedFifteen.length%></h1>
     <% topRatedFifteen.forEach((element)=>{%>
-        <ul style="padding-bottom: 20px; background-color: rgb(2, 2, 69); border-radius: 10px; box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);">
+        <ul style="padding-bottom: 20px; background-color: rgb(47, 47, 91); border-radius: 10px; box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);">
             <h3><%= element.title%></h3>
             <li><%= element.releaseYear%></li>
             <li><%= element.rating%></li>
