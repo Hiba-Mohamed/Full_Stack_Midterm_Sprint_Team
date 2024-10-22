@@ -11,12 +11,12 @@ app.use(express.static('public'));
 
 app.get('/', (request, response) => {
     const randomNineMoviesArray = getRandomNumberOfMovies(9)
-    console.log(randomNineMoviesArray);
     response.render('index', {randomNineMoviesArray});
 });
 
 app.get("/topRated", (request, response) => {
-  response.render("topRated");
+    const topRatedFifteen = getTopRatedMovies(15);
+  response.render("topRated", {topRatedFifteen});
 });
 
 app.get('/movie/:id', (request, response) => {

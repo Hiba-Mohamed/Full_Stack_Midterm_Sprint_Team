@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Rated</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+
 </head>
-    <body style="display: flex; flex-direction: column;">
+    <body style="display: flex; flex-direction: column; padding:10px;">
     <%- include('header') %>
+    <h2>Top Rated <%=topRatedFifteen.length%></h2>
+    <% topRatedFifteen.forEach((element)=>{%>
+        <ul style="padding-bottom: 20px;">
+            <h3><%= element.title%></h3>
+            <li><%= element.releaseYear%></li>
+            <li><%= element.rating%></li>
+            <li style="width: 80%;"><%= element.description%></li>
+        </ul>
+   <% })%>
+    
 
 </body>
 </html>

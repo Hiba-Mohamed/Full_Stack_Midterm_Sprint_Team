@@ -15,8 +15,10 @@ function getMoviesByGenre(genre, x) {
  * @param {number} x - The number of top-rated movies to retrieve
  * @returns {Array.<Movies>} - An array of top-rated movies
  */
-function getTopRatedMovies(x) {
-  // Implementation here
+function getTopRatedMovies(numberWanted) {
+  const allMoviesOrderedByRatingArray = Movies.sort((a,b)=>b.rating -a.rating)
+  const orderedMoviesSpecifiedNumber = allMoviesOrderedByRatingArray.slice(0,numberWanted)
+  return orderedMoviesSpecifiedNumber
 }
 
 /**
