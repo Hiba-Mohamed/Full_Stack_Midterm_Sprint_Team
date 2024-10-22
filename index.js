@@ -13,12 +13,18 @@ app.get('/', (request, response) => {
     response.render('index');
 });
 
+app.get("/topRated", (request, response) => {
+  response.render("topRated");
+});
+
 app.get('/movie/:id', (request, response) => {
     //For use with links like: /movie/1
     const movieId = request.params.id;
 });
 
 //Add remaining routes here
+
+
 
 const port = 3000;
 app.listen(port, () => {
