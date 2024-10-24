@@ -47,9 +47,8 @@ function getRandomNumberOfMovies(numberWanted) {
  * Select a random movie ID
  * @returns {number} - A random movie ID
  */
-function selectRandomMovieId() {
-  // Implementation here
-}
+function selectRandomMovieId(numberOfAvailableMovies) {
+ return Math.floor(Math.random() * numberOfAvailableMovies);}
 
 // Export the functions to be used in other modules
 module.exports = {

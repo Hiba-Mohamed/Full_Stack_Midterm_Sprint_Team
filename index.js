@@ -2,12 +2,19 @@ const express = require('express');
 const path = require('path');
 const { getTopRatedMovies, getMoviesByGenre, getMovieDetailsById, selectRandomMovieId,getRandomNumberOfMovies } = require('./utils/movieUtils');
 const { Movies, Genres } = require('./utils/data');
+const numberOfAvailableMovies = Movies.length;
 
 const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
+
+// Middleware to set the randomMovieId and pass it to header directly
+app.use((req, res, next) => {
+    res.locals.randomMovieID = selectRandomMovieId(numberOfAvailableMovies); 
+    next(); 
+});
 
 app.get('/', (request, response) => {
     const randomNineMoviesArray = getRandomNumberOfMovies(9)
