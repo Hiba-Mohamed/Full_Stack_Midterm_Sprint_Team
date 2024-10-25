@@ -40,6 +40,8 @@ app.get("/movie/:id", (req, res) => {
   if (!movie) {
     return res.status(404).send("Movie not found");
   }
+
+  res.render("movie", { movie: movie });
 });
 
 //Add remaining routes here

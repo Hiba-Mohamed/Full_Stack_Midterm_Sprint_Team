@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
     <title>Movie Page</title>
-</head>
-    <body style="display: flex; flex-direction: column;">
+  </head>
+  <body
+    style="
+      padding-bottom: 20px;
+      list-style-type: none;
+      padding-top: 5px;
+      background-color: rgb(47, 47, 91);
+      border-radius: 10px;
+      box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
+    ">
     <%- include('header') %>
-
-</body>
+    <main>
+      <% if (movie) { %>
+      <h1><%= movie.title %></h1>
+      <ul
+        style="
+          list-style-type: none;
+          padding-bottom: 20px;
+          background-color: rgb(47, 47, 91);
+          border-radius: 10px;
+          box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
+        ">
+        <li><strong>Release Year:</strong> <%= movie.releaseYear %></li>
+        <li><strong>Rating:</strong> <%= movie.rating %>/10</li>
+        <li style="width: 80%">
+          <strong>Description:</strong> <%= movie.description %>
+        </li>
+      </ul>
+      <% } else { %>
+      <h1>Movie not found</h1>
+      <% } %>
+    </main>
+  </body>
 </html>
