@@ -1,23 +1,195 @@
-/* Base styling, feel free to remove or alter */
-
+/* Base styling */
 body {
-    background: linear-gradient(90deg, rgb(10, 26, 62) 0%, rgb(2, 7, 19) 50%, rgb(40, 12, 77) 100%);
-    height: 100%;
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    color: #F6F6F6;
+  background: linear-gradient(
+    90deg,
+    rgb(10, 26, 62) 0%,
+    rgb(2, 7, 19) 50%,
+    rgb(40, 12, 77) 100%
+  );
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  color: #f6f6f6;
+  flex-direction: column;
 }
 
+/* Centering the header */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(30, 30, 60);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #ffd700;
+}
+
+/* Styling for index.ejs */
 .main-content {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
 }
 
 .main-content h1 {
-    font-size: 50px;
+  font-size: 50px;
+  text-align: center;
+}
+
+/* Styling for home page */
+
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.homepage h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+.homepage ul {
+  width: 100%;
+  max-width: 900px;
+  list-style-type: none;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(47, 47, 91);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
+}
+
+.homepage ul li {
+  margin-bottom: 10px;
+}
+
+.homepage ul li a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: rgba(62, 62, 63, 0.607);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.homepage ul li a:hover {
+  background-color: rgba(62, 62, 63, 0.8);
+}
+
+.movie-list-item {
+  width: 100%;
+  max-width: 900px;
+  list-style-type: none;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(47, 47, 91);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
+  height: 200px; /* Set a fixed height */
+  overflow: hidden; /* Hide overflow if content exceeds height */
+  display: flex; /* Use flex to align items */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Space out items */
+}
+
+.movie-list-item h3 {
+  margin: 0;
+  font-size: 1.5rem; /* You can adjust the size as needed */
+}
+
+.movie-list-item a {
+  display: inline-block;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: rgba(62, 62, 63, 0.607);
+  color: white;
+  text-decoration: none;
+  align-self: flex-end; /* Align the link to the bottom */
+}
+
+/* Styling for top-rated movies */
+.top-rated {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.top-rated h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+.top-rated ul {
+  width: 100%;
+  max-width: 900px;
+  list-style-type: none;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(47, 47, 91);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
+}
+
+.top-rated ul li {
+  margin-bottom: 10px;
+}
+
+.top-rated ul li a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: rgba(62, 62, 63, 0.607);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.top-rated ul li a:hover {
+  background-color: rgba(62, 62, 63, 0.8);
+}
+
+.tagline {
+  font-size: 18px;
+  color: #d1d1d1;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.5;
 }

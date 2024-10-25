@@ -1,14 +1,17 @@
-<section>
-    <h2>Explore Movies</h2>
-    <% randomNineMoviesArray.forEach((element)=>{%>
-        <ul style="padding-bottom: 20px; list-style-type: none; padding-top: 5px; background-color: rgb(47, 47, 91); border-radius: 10px; box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);">
-            <h3><%= element.title%></h3>
-            <li><strong>Release Year:</strong> <%= element.releaseYear%></li>
-            <li><strong>Rating: </strong>       <%= element.rating%>/10</li>
-            <li style="width: 80%;"><strong>Description:</strong> <%= element.description%></li>
-            <li style="padding-top: 30px; text-decoration: none;">
-            <a style="border-radius: 5px; padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; background-color: rgba(62, 62, 63, 0.607); text-decoration: none;  color: white;" 
-            href="/movie/<%=element.id %>">Explore Movie</a></li>
-        </ul>
-   <% })%>
+<section class="homepage">
+  <p class="tagline">
+    Dive into our curated collection and uncover stories that captivate,
+    thrill, and inspire!
+  </p>
+  <% randomNineMoviesArray.forEach((element) => { %>
+  <ul class="movie-list-item">
+    <h3><%= element.title %></h3>
+    <li><strong>Release Year:</strong> <%= element.releaseYear %></li>
+    <li><strong>Rating:</strong> <%= element.rating %>/10</li>
+    <li><strong>Description:</strong> <%= element.description %></li>
+    <li>
+      <a href="/movie/<%=element.id %>">Explore Movie</a>
+    </li>
+  </ul>
+  <% }) %>
 </section>
