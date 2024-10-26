@@ -2,12 +2,16 @@ const { Movies, Genres } = require("./data");
 
 /**
  * Get `x` movies by genre
- * @param {Genres} genre - The genre of the movies
+ * @param {string} genre - The genre of the movies
  * @param {number} x - The number of movies to retrieve
- * @returns {Array.<Movies>} - An array of movies matching the genre
+ * @returns {Array.<object>} - An array of movies matching the genre
  */
 function getMoviesByGenre(genre, x) {
-  // Implementation here
+  // Filter movies by the specified genre
+  const moviesByGenre = Movies.filter((movie) => movie.genre === genre);
+
+  // Return the first `x` movies from the filtered results
+  return moviesByGenre.slice(0, x);
 }
 
 /**

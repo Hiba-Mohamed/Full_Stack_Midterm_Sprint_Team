@@ -41,21 +41,14 @@ app.get("/movie/:id", (req, res) => {
     return res.status(404).send("Movie not found");
   }
 
-  // Filter movies by the same genre and exclude the current movie
-  const recommendations = Movies.filter(
-    (m) => m.genre === movie.genre && m.id !== movie.id
-  );
+  // Use getMoviesByGenre to get up to 3 movies of the same genre
+  const genreMovies = getMoviesByGenre(movie.genre, 3);
 
-  // Randomly select three recommendations if more than three are available
-  const randomRecommendations =
-    recommendations.length > 3
-      ? recommendations.sort(() => 0.5 - Math.random()).slice(0, 3)
-      : recommendations;
+  // Exclude the current movie from recommendations
+  const recommendations = genreMovies.filter((m) => m.id !== movie.id);
 
-  res.render("movie", {
-    movie: movie,
-    recommendations: randomRecommendations,
-  });
+  // Render the movie details page with the movie and recommendations data
+  res.render("movie", { movie, recommendations });
 });
 
 //Add remaining routes here

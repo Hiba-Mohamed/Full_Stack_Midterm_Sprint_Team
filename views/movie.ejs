@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/styles.css" />
   </head>
   <body>
-    <%- include('header') %>
+    <%- include("header") %>
     <div class="main-layout">
       <div class="movie">
         <% if (movie) { %>
@@ -24,12 +24,13 @@
       </div>
 
       <!-- Recommendations Section -->
+      <% if (recommendations.length > 0) { %>
       <div class="recommendations">
         <p class="tagline">
           Based on the genre <em><%= movie.genre %></em>, the following
           movies are recommended:
         </p>
-        <% recommendations.forEach(rec => { %>
+        <% recommendations.forEach((rec) => { %>
         <div class="recommendation-item">
           <h4><%= rec.title %></h4>
           <p><strong>Release Year:</strong> <%= rec.releaseYear %></p>
@@ -39,6 +40,8 @@
         <% }) %>
       </div>
       <% } else { %>
+      <p>No recommendations available for this genre.</p>
+      <% } %> <% } else { %>
       <h1>Movie not found</h1>
       <% } %>
     </div>
