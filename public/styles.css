@@ -118,16 +118,16 @@ header nav ul li a:hover {
   background-color: rgb(47, 47, 91);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
-  height: 200px; /* Set a fixed height */
-  overflow: hidden; /* Hide overflow if content exceeds height */
-  display: flex; /* Use flex to align items */
-  flex-direction: column; /* Stack children vertically */
-  justify-content: space-between; /* Space out items */
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .movie-list-item h3 {
   margin: 0;
-  font-size: 1.5rem; /* You can adjust the size as needed */
+  font-size: 1.5rem;
 }
 
 .movie-list-item a {
@@ -138,7 +138,7 @@ header nav ul li a:hover {
   background-color: rgba(62, 62, 63, 0.607);
   color: white;
   text-decoration: none;
-  align-self: flex-end; /* Align the link to the bottom */
+  align-self: flex-end;
 }
 
 /* Styling for top-rated movies */
@@ -195,12 +195,29 @@ header nav ul li a:hover {
 }
 
 /* Styling for movies page*/
-.movie {
+/* Container for movie and recommendations */
+.main-layout {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.movie {
+  flex: 2;
+  margin-right: 20px;
+  display: flex;
   flex-direction: column;
-  padding: 10px;
+  width: 100%;
+  max-width: 700px;
+  background-color: rgb(47, 47, 91);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
+  height: 688px;
 }
 
 .movie h1 {
@@ -208,33 +225,79 @@ header nav ul li a:hover {
   text-align: center;
 }
 
-.movie ul {
-  width: 100%;
-  max-width: 900px;
+.movie-detail {
   list-style-type: none;
   padding: 20px;
+  margin: 0 10px;
+  background-color: rgba(62, 62, 63, 0.607);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-detail ul {
+  list-style-type: none;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
   margin-bottom: 20px;
+  /* background-color: rgb(47, 47, 91); */
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
+}
+
+.movie-detail ul li {
+  margin-bottom: 10px;
+}
+/* Styling for recommendations section */
+.recommendations {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  gap: 10px;
   background-color: rgb(47, 47, 91);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
 }
 
-.movie ul li {
-  margin-bottom: 10px;
+.recommendation-item {
+  padding: 20px;
+  margin: 0 10px 10px 10px;
+  background-color: rgba(62, 62, 63, 0.607);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
-.movie ul li a {
+.recommendation-item h4 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.recommendation-item p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+.recommendation-item a {
   display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: rgba(62, 62, 63, 0.607);
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: rgb(72, 61, 139);
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  text-align: center;
   transition: background-color 0.3s;
 }
 
-.movie ul li a:hover {
-  background-color: rgba(62, 62, 63, 0.8);
+.recommendation-item a:hover {
+  background-color: rgb(93, 63, 211);
 }

@@ -10,18 +10,37 @@
   </head>
   <body>
     <%- include('header') %>
-    <main class="movie">
-      <h1>Review</h1>
-      <% if (movie) { %>
-      <h1><%= movie.title %></h1>
-      <ul class="movie-list-item">
-        <li><strong>Release Year:</strong> <%= movie.releaseYear %></li>
-        <li><strong>Rating:</strong> <%= movie.rating %>/10</li>
-        <li><strong>Description:</strong> <%= movie.description %></li>
-      </ul>
+    <div class="main-layout">
+      <div class="movie">
+        <% if (movie) { %>
+        <h1><%= movie.title %></h1>
+        <ul class="movie-detail">
+          <li><strong>Release Year:</strong> <%= movie.releaseYear %></li>
+          <li><strong>Rating:</strong> <%= movie.rating %>/10</li>
+          <li><strong>Description:</strong> <%= movie.description %></li>
+          <li><strong>Director:</strong> <%= movie.director %></li>
+          <li><strong>Genre:</strong> <%= movie.genre %></li>
+        </ul>
+      </div>
+
+      <!-- Recommendations Section -->
+      <div class="recommendations">
+        <p class="tagline">
+          Based on the genre <em><%= movie.genre %></em>, the following
+          movies are recommended:
+        </p>
+        <% recommendations.forEach(rec => { %>
+        <div class="recommendation-item">
+          <h4><%= rec.title %></h4>
+          <p><strong>Release Year:</strong> <%= rec.releaseYear %></p>
+          <p><strong>Rating:</strong> <%= rec.rating %>/10</p>
+          <a href="/movie/<%= rec.id %>">Explore Movie</a>
+        </div>
+        <% }) %>
+      </div>
       <% } else { %>
       <h1>Movie not found</h1>
       <% } %>
-    </main>
+    </div>
   </body>
 </html>
