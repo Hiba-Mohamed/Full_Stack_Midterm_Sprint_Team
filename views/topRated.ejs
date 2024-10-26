@@ -10,23 +10,27 @@
   </head>
   <body>
     <%- include('header') %>
-    <main class="top-rated">
-      <h1>Top Rated <%= topRatedFifteen.length %></h1>
-      <p class="tagline">
-        Discover the most acclaimed movies that stand the test of time.
-        Curated for your ultimate cinematic experience!
-      </p>
-      <% topRatedFifteen.forEach((element) => { %>
-      <ul class="movie-list-item">
-        <h3><%= element.title %></h3>
-        <li><strong>Release Year:</strong> <%= element.releaseYear %></li>
-        <li><strong>Rating:</strong> <%= element.rating %>/10</li>
-        <li><strong>Description:</strong> <%= element.description %></li>
-        <li>
-          <a href="/movie/<%=element.id %>">Explore Movie</a>
-        </li>
-      </ul>
-      <% }) %>
+    <main class="main-layout">
+      <div class="top-rated">
+        <h1>Top Rated <%= topRatedFifteen.length %></h1>
+        <p class="tagline">
+          Discover the most acclaimed movies that stand the test of time.
+          Curated for your ultimate cinematic experience!
+        </p>
+        <% topRatedFifteen.forEach((element) => { %>
+        <ul class="movie-list-item">
+          <h3><%= element.title %></h3>
+          <li>
+            <strong>Release Year:</strong> <%= element.releaseYear %>
+          </li>
+          <li><strong>Rating:</strong> <%= element.rating %>/10</li>
+          <li><strong>Description:</strong> <%= element.description %></li>
+          <li>
+            <a href="/movie/<%=element.id %>">Explore Movie</a>
+          </li>
+        </ul>
+        <% }) %>
+      </div>
     </main>
   </body>
 </html>

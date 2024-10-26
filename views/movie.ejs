@@ -10,10 +10,11 @@
   </head>
   <body>
     <%- include("header") %>
-    <div class="main-layout">
+    <main class="main-layout">
       <div class="movie">
         <% if (movie) { %>
         <h1><%= movie.title %></h1>
+        <p class="tagline">Discover What Makes This Movie a Must-See!</p>
         <ul class="movie-detail">
           <li><strong>Release Year:</strong> <%= movie.releaseYear %></li>
           <li><strong>Rating:</strong> <%= movie.rating %>/10</li>
@@ -26,24 +27,26 @@
       <!-- Recommendations Section -->
       <% if (recommendations.length > 0) { %>
       <div class="recommendations">
-        <p class="tagline">
+        <p class="tagline-upcoming">
           Based on the genre <em><%= movie.genre %></em>, the following
           movies are recommended:
         </p>
-        <% recommendations.forEach((rec) => { %>
-        <div class="recommendation-item">
-          <h4><%= rec.title %></h4>
-          <p><strong>Release Year:</strong> <%= rec.releaseYear %></p>
-          <p><strong>Rating:</strong> <%= rec.rating %>/10</p>
-          <a href="/movie/<%= rec.id %>">Explore Movie</a>
+        <div class="recommendation-items">
+          <% recommendations.forEach((rec) => { %>
+          <div class="recommendation-item">
+            <h4><%= rec.title %></h4>
+            <p><strong>Release Year:</strong> <%= rec.releaseYear %></p>
+            <p><strong>Rating:</strong> <%= rec.rating %>/10</p>
+            <a href="/movie/<%= rec.id %>">Explore Movie</a>
+          </div>
+          <% }) %>
         </div>
-        <% }) %>
       </div>
       <% } else { %>
       <p>No recommendations available for this genre.</p>
       <% } %> <% } else { %>
       <h1>Movie not found</h1>
       <% } %>
-    </div>
+    </main>
   </body>
 </html>

@@ -141,21 +141,29 @@ header nav ul li a:hover {
   align-self: flex-end;
 }
 
-/* Styling for top-rated movies */
-.top-rated {
+/* Styling for top-rated, movie and upcoming movie pages */
+.top-rated,
+.movie,
+.upcoming-movie {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 10px;
+  width: 100%;
+  max-width: 900px;
 }
 
-.top-rated h1 {
+.top-rated h1,
+.movie h1,
+.upcoming-movie h1 {
   font-size: 50px;
   text-align: center;
 }
 
-.top-rated ul {
+.top-rated ul,
+.movie ul,
+.upcoming-movie ul {
   width: 100%;
   max-width: 900px;
   list-style-type: none;
@@ -166,11 +174,15 @@ header nav ul li a:hover {
   box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
 }
 
-.top-rated ul li {
+.top-rated ul li,
+.movie ul li,
+.upcoming-movie ul li {
   margin-bottom: 10px;
 }
 
-.top-rated ul li a {
+.top-rated ul li a,
+.movie ul li a,
+.upcoming-movie ul li a {
   display: inline-block;
   margin-top: 10px;
   padding: 10px 20px;
@@ -182,7 +194,9 @@ header nav ul li a:hover {
   transition: background-color 0.3s;
 }
 
-.top-rated ul li a:hover {
+.top-rated ul li a:hover,
+.movie ul li a:hover,
+.upcoming-movie ul li a:hover {
   background-color: rgba(62, 62, 63, 0.8);
 }
 
@@ -194,92 +208,46 @@ header nav ul li a:hover {
   line-height: 1.5;
 }
 
-/* Styling for movies page*/
-/* Container for movie and recommendations */
-.main-layout {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
+/* Styling for recommendations section */
 
-.movie {
-  flex: 2;
-  margin-right: 20px;
-  display: flex;
-  flex-direction: column;
+.recommendations {
   width: 100%;
-  max-width: 700px;
+  max-width: 900px;
+  padding: 20px;
+  margin-bottom: 20px;
   background-color: rgb(47, 47, 91);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
-  height: 688px;
+  height: 220px;
 }
-
-.movie h1 {
-  font-size: 50px;
+.tagline-upcoming {
+  font-size: 18px;
+  color: white;
   text-align: center;
 }
 
-.movie-detail {
-  list-style-type: none;
-  padding: 20px;
-  margin: 0 10px;
-  background-color: rgba(62, 62, 63, 0.607);
-  color: white;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  height: 400px;
-  overflow: hidden;
+.recommendation-items {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.movie-detail ul {
-  list-style-type: none;
-  width: 100%;
-  max-width: 800px;
-  padding: 20px;
-  margin-bottom: 20px;
-  /* background-color: rgb(47, 47, 91); */
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
-}
-
-.movie-detail ul li {
-  margin-bottom: 10px;
-}
-/* Styling for recommendations section */
-.recommendations {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 400px;
+  flex-direction: row;
+  justify-content: center;
   gap: 10px;
-  background-color: rgb(47, 47, 91);
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
 }
 
 .recommendation-item {
+  flex: 1 1 calc(33% - 10px);
   padding: 20px;
-  margin: 0 10px 10px 10px;
   background-color: rgba(62, 62, 63, 0.607);
   color: white;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
+  min-width: 120px;
+  height: 130px;
 }
 
 .recommendation-item h4 {
   font-size: 1.2rem;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .recommendation-item p {
@@ -300,4 +268,12 @@ header nav ul li a:hover {
 
 .recommendation-item a:hover {
   background-color: rgb(93, 63, 211);
+}
+
+.main-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
 }

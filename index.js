@@ -51,7 +51,26 @@ app.get("/movie/:id", (req, res) => {
   res.render("movie", { movie, recommendations });
 });
 
-//Add remaining routes here
+// Route for upcoming movies
+app.get("/upcomingMovies", (req, res) => {
+  const upcomingMovies = Movies.filter(
+    (movie) => movie.releaseYear > 2023
+  );
+
+  const numberOfMoviesToShow = Math.min(5, upcomingMovies.length);
+  const selectedMovies = new Set();
+
+  while (selectedMovies.size < numberOfMoviesToShow) {
+    const randomIndex = selectRandomMovieId(upcomingMovies.length);
+    selectedMovies.add(upcomingMovies[randomIndex]);
+  }
+
+  const randomUpcomingMovies = Array.from(selectedMovies);
+
+  res.render("upcomingMovies", {
+    topUpcomingMovies: randomUpcomingMovies,
+  });
+});
 
 const port = 3000;
 app.listen(port, () => {

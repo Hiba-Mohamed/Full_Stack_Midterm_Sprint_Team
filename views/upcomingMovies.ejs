@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
     <title>Upcoming Movies</title>
-</head>
-    <body style="display: flex; flex-direction: column;">
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+  </head>
+  <body>
     <%- include('header') %>
-
-</body>
+    <main class="main-layout">
+      <div class="upcoming-movie">
+        <h1>Upcoming Movies</h1>
+        <p class="tagline">
+          Sneak Peek: The Most Anticipated Films Await!
+        </p>
+        <% topUpcomingMovies.forEach(movie => { %>
+        <ul class="movie-list-item">
+          <!-- Link to the movie's detailed page -->
+          <h3><%= movie.title %></h3>
+          <li><strong>Release Year:</strong> <%= movie.releaseYear %></li>
+          <li><strong>Description:</strong> <%= movie.description %></li>
+          <li>
+            <a href="/movie/<%=movie.id %>">Explore Movie</a>
+          </li>
+        </ul>
+        <% }) %>
+      </div>
+    </main>
+  </body>
 </html>
