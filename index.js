@@ -32,16 +32,6 @@ app.get("/topRated", (request, response) => {
   response.render("topRated", { topRatedFifteen });
 });
 
-// Movie page route: Displays detailed information about a movie
-// Route to redirect to a random movie using res.locals.randomMovieID
-app.get("/movie", (req, res) => {
-  // Add 1 to ensure the ID falls within the valid range (1 to 28)
-  const randomMovieId = res.locals.randomMovieID + 1;
-
-  // Redirect to the movie details page with the random ID
-  res.redirect(`/movie/${randomMovieId}`);
-});
-
 // Movie page route: Displays detailed information about a specific movie
 app.get("/movie/:id", (req, res) => {
   const movieId = req.params.id;
