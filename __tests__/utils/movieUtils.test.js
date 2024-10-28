@@ -2,6 +2,7 @@ const {
   getRandomMoviesByGenre,
   getTopRatedMovies,
   getMoviesByGenre,
+  getMovieDetailsById,
   formatMovieData,
   getRandomGenre,
   generateMovieReport,
@@ -51,9 +52,20 @@ describe("Movie Utility Functions", () => {
     });
   });
 
-  // describe('getMovieDetailsById', () => {
+  describe("getMovieDetailsById", () => {
+    test("If the ID is valid, a valid movie is returned", () => {
+      const validId = 1;
+      const movie = getMovieDetailsById(validId);
+      expect(movie).toBeDefined();
+      expect(movie.id).toBe(validId);
+    });
 
-  // });
+    test("If the ID is invalid, an appropriate response is returned", () => {
+      const invalidId = 0;
+      const movie = getMovieDetailsById(invalidId);
+      expect(movie).toBeNull();
+    });
+  });
 
   describe("selectRandomMovieId", () => {
     const randomMovieId = selectRandomMovieId(availableMoviesNumber);
