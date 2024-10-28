@@ -118,7 +118,7 @@ header nav ul li a:hover {
   background-color: rgb(47, 47, 91);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
-  height: 200px;
+  height: 170px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -288,4 +288,9 @@ header nav ul li a:hover {
   align-items: center;
   flex-direction: column;
   padding: 5px;
+}
+
+.main-layout h1 {
+  font-size: 50px;
+  text-align: center;
 }
