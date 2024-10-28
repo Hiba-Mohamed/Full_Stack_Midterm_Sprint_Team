@@ -57,7 +57,8 @@ function getRandomNumberOfMovies(numberWanted) {
  * @returns {number} - A random movie ID
  */
 function selectRandomMovieId(numberOfAvailableMovies) {
-  return Math.floor(Math.random() * numberOfAvailableMovies);
+  // Ensure it returns a random integer between 1 and numberOfAvailableMovies (inclusive)
+  return Math.floor(Math.random() * numberOfAvailableMovies) + 1; // to ensure it starts from 1
 }
 
 // Export the functions to be used in other modules

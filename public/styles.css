@@ -208,6 +208,12 @@ header nav ul li a:hover {
   line-height: 1.5;
 }
 
+.movie-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 150px;
+}
 /* Styling for recommendations section */
 
 .recommendations {
@@ -224,6 +230,8 @@ header nav ul li a:hover {
   font-size: 18px;
   color: white;
   text-align: center;
+  line-height: 2px;
+  padding-bottom: 5px;
 }
 
 .recommendation-items {
@@ -242,7 +250,7 @@ header nav ul li a:hover {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
   min-width: 120px;
-  height: 130px;
+  height: 140px;
 }
 
 .recommendation-item h4 {
@@ -255,7 +263,11 @@ header nav ul li a:hover {
   margin: 5px 0;
 }
 
-.recommendation-item a {
+.recommendation-item-button {
+  display: flex;
+  justify-content: center;
+}
+.recommendation-item-button a {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 15px;
@@ -266,7 +278,7 @@ header nav ul li a:hover {
   transition: background-color 0.3s;
 }
 
-.recommendation-item a:hover {
+.recommendation-item-button a:hover {
   background-color: rgb(93, 63, 211);
 }
 
@@ -275,5 +287,5 @@ header nav ul li a:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 10px;
+  padding: 5px;
 }

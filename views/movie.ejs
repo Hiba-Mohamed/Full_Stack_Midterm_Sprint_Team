@@ -12,9 +12,11 @@
     <%- include("header") %>
     <main class="main-layout">
       <div class="movie">
-        <% if (movie) { %>
         <h1><%= movie.title %></h1>
-        <p class="tagline">Discover What Makes This Movie a Must-See!</p>
+        <p class="tagline">
+          Find Out Why This Movie is a Must-See for Every True Cinema
+          Lover!
+        </p>
         <ul class="movie-detail">
           <li><strong>Release Year:</strong> <%= movie.releaseYear %></li>
           <li><strong>Rating:</strong> <%= movie.rating %>/10</li>
@@ -37,15 +39,16 @@
             <h4><%= rec.title %></h4>
             <p><strong>Release Year:</strong> <%= rec.releaseYear %></p>
             <p><strong>Rating:</strong> <%= rec.rating %>/10</p>
-            <a href="/movie/<%= rec.id %>">Explore Movie</a>
+            <div class="recommendation-item-button">
+              <a href="/movie/<%= rec.id %>">Explore Movie</a>
+            </div>
           </div>
+
           <% }) %>
         </div>
       </div>
       <% } else { %>
       <p>No recommendations available for this genre.</p>
-      <% } %> <% } else { %>
-      <h1>Movie not found</h1>
       <% } %>
     </main>
   </body>
