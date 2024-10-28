@@ -48,22 +48,19 @@ header nav ul li a:hover {
   color: #ffd700;
 }
 
-/* Styling for index.ejs */
-.main-content {
+/* Styling for home page */
+.main-layout {
   display: flex;
   justify-content: center;
-  flex: 1;
   align-items: center;
   flex-direction: column;
-  padding: 10px;
+  padding: 5px;
 }
 
-.main-content h1 {
+.main-layout h1 {
   font-size: 50px;
   text-align: center;
 }
-
-/* Styling for home page */
 
 .homepage {
   display: flex;
@@ -71,42 +68,6 @@ header nav ul li a:hover {
   align-items: center;
   flex-direction: column;
   padding: 10px;
-}
-
-.homepage h1 {
-  font-size: 50px;
-  text-align: center;
-}
-
-.homepage ul {
-  width: 100%;
-  max-width: 900px;
-  list-style-type: none;
-  padding: 20px;
-  margin-bottom: 20px;
-  background-color: rgb(47, 47, 91);
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgba(27, 27, 27, 0.463);
-}
-
-.homepage ul li {
-  margin-bottom: 10px;
-}
-
-.homepage ul li a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: rgba(62, 62, 63, 0.607);
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
-  transition: background-color 0.3s;
-}
-
-.homepage ul li a:hover {
-  background-color: rgba(62, 62, 63, 0.8);
 }
 
 .movie-list-item {
@@ -214,8 +175,8 @@ header nav ul li a:hover {
   justify-content: center;
   height: 150px;
 }
-/* Styling for recommendations section */
 
+/* Styling for recommendations section */
 .recommendations {
   width: 100%;
   max-width: 900px;
@@ -280,17 +241,4 @@ header nav ul li a:hover {
 
 .recommendation-item-button a:hover {
   background-color: rgb(93, 63, 211);
-}
-
-.main-layout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 5px;
-}
-
-.main-layout h1 {
-  font-size: 50px;
-  text-align: center;
 }
