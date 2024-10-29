@@ -1,12 +1,7 @@
 const {
-  getRandomMoviesByGenre,
   getTopRatedMovies,
   getMoviesByGenre,
   getMovieDetailsById,
-  formatMovieData,
-  getRandomGenre,
-  generateMovieReport,
-  getRandomNumberOfMovies,
   selectRandomMovieId,
 } = require("../../utils/movieUtils");
 const data = require("../../utils/data");
@@ -69,9 +64,9 @@ describe("Movie Utility Functions", () => {
 
   describe("selectRandomMovieId", () => {
     const randomMovieId = selectRandomMovieId(availableMoviesNumber);
-    console.log(randomMovieId);
+    // console.log(randomMovieId);
     const randomMovie = movies.find((movie) => movie.id === randomMovieId);
-    console.log(randomMovie);
+    // console.log(randomMovie);
     test("Selects a random movie id that is included in the avaliable movies", () => {
       expect(randomMovieId).toBeGreaterThanOrEqual(0);
       expect(randomMovieId).toBeLessThan(availableMoviesNumber - 1);
@@ -83,4 +78,4 @@ describe("Movie Utility Functions", () => {
   });
 });
 
-getRandomMoviesByGenre;
+
